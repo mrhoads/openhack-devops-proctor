@@ -1,5 +1,5 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "spUserName": {
@@ -74,7 +74,7 @@
         },
         "ubuntuOSVersion": {
             "type": "string",
-            "defaultValue": "16.04-DAILY-LTS",
+            "defaultValue": "18.04-LTS",
             "metadata": {
                 "description": "The Ubuntu version for deploying the Docker containers. This will pick a fully patched image of this given Ubuntu version."
             },
@@ -119,7 +119,7 @@
         "sshKeyPath": "[concat('/home/',parameters('adminUsername'),'/.ssh/authorized_keys')]",
         "subnetRef": "[concat(variables('vnetID'),'/subnets/',variables('subnetName'))]",
         "gitBranch": "[parameters('gitBranch')]",
-        "gitUri": "[concat('https://raw.githubusercontent.com/Azure-Samples/openhack-devops-proctor/',variables('gitBranch'),'/provision-vm/proctorVMSetup.sh')]"
+        "gitUri": "[concat('https://raw.githubusercontent.com/mrhoads/openhack-devops-proctor/',variables('gitBranch'),'/provision-vm/proctorVMSetup.sh')]"
     },
     "resources": [
         {
